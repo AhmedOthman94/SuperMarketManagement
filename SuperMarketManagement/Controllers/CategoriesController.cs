@@ -27,7 +27,7 @@ namespace SuperMarketManagement.Controllers
 				CategoriesRepository.UpdateCategory(category.CategoryId, category);
 				return RedirectToAction(nameof(Index));
 			}
-
+			ViewBag.Action = "Edit";
 			return View(category);
 		}
 
@@ -45,13 +45,15 @@ namespace SuperMarketManagement.Controllers
 				CategoriesRepository.AddCategory(category);
 				return RedirectToAction(nameof(Index));
 			}
-
+			ViewBag.Action = "Add";
 			return View(category);
 		}
 
-		public IActionResult Delete(int categoryId)
+		[HttpPost]
+		[ValidateAntiForgeryToken]
+		public IActionResult Delete(int id)
 		{
-			CategoriesRepository.DeleteCategory(categoryId);
+			CategoriesRepository.DeleteCategory(id);
 			return RedirectToAction(nameof(Index));
 		}
 
