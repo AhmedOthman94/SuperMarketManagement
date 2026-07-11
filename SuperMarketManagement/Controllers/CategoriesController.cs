@@ -20,6 +20,7 @@ namespace SuperMarketManagement.Controllers
 		}
 
 		[HttpPost]
+		[ValidateAntiForgeryToken]
 		public IActionResult Edit(Category category)
 		{
 			if (ModelState.IsValid)
@@ -38,6 +39,7 @@ namespace SuperMarketManagement.Controllers
 		}
 
 		[HttpPost]
+		[ValidateAntiForgeryToken]
 		public IActionResult Add(Category category) 
 		{
 			if (ModelState.IsValid)

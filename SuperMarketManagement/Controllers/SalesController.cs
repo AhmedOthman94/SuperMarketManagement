@@ -23,6 +23,7 @@ namespace SuperMarketManagement.Controllers
 		}
 
 		[HttpPost]
+		[ValidateAntiForgeryToken]
 		public IActionResult Sell(SalesViewModel salesViewModel)
 		{
 			if (ModelState.IsValid)

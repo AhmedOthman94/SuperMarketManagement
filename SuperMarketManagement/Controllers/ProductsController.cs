@@ -24,6 +24,7 @@ namespace SuperMarketManagement.Controllers
 		}
 
 		[HttpPost]
+		[ValidateAntiForgeryToken]
 		public IActionResult Add(ProductViewModel productViewModel)
 		{
 			if (ModelState.IsValid)
@@ -49,6 +50,7 @@ namespace SuperMarketManagement.Controllers
 		}
 
 		[HttpPost]
+		[ValidateAntiForgeryToken]
 		public IActionResult Edit(ProductViewModel productViewModel)
 		{
 			if (ModelState.IsValid)

@@ -50,7 +50,8 @@
 	</div>
 	<div class="col">
 		@* List of Trans*@
-	</div>
+		@await Component.InvokeAsync("Transactions", new { userName = "Cashier1" })
+		</div>
 </div>
 
 @section Scripts{
@@ -58,7 +59,7 @@
 		$(function () {
 
 			$("#formSale").hide();
-			$("#QyantityToSell").val("");
+			$("#QuantityToSell").val("");
 
 			// Load the products if category is already selected
 			var selectedCategoryId = $("#SelectedCategoryId").val();
